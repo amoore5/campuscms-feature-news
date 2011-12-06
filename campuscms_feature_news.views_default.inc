@@ -307,8 +307,8 @@ return FALSE;';
   $handler->display->display_options['fields']['field_news_image']['separator'] = '';
   $handler->display->display_options['fields']['field_news_image']['field_api_classes'] = 0;
   $handler->display->display_options['path'] = 'news';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'News';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
 
   /* Display: News By Year */

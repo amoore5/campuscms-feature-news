@@ -10,6 +10,24 @@
 function campuscms_feature_news_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu:news
+  $menu_links['main-menu:news'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'news',
+    'router_path' => 'news',
+    'link_title' => 'News',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => '1',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '0',
+  );
   // Exported menu link: menu-toolbar-administrator:node/add/news
   $menu_links['menu-toolbar-administrator:node/add/news'] = array(
     'menu_name' => 'menu-toolbar-administrator',
