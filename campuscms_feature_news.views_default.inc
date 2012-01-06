@@ -9,7 +9,6 @@
  */
 function campuscms_feature_news_views_default_views() {
   $export = array();
-
   $view = new view;
   $view->name = 'news';
   $view->description = '';
@@ -19,7 +18,6 @@ function campuscms_feature_news_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'News';
@@ -167,10 +165,10 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['arguments']['field_news_date_value']['specify_validation'] = 1;
   $handler->display->display_options['arguments']['field_news_date_value']['validate']['type'] = 'php';
   $handler->display->display_options['arguments']['field_news_date_value']['validate_options']['code'] = '$handler->argument = $handler->view->args[0] . \'-\' . $argument;
-if ($argument > 0 && $argument < 13) {
-  return TRUE;
-}
-return FALSE;';
+  if ($argument > 0 && $argument < 13) {
+    return TRUE;
+  }
+  return FALSE;';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -185,7 +183,6 @@ return FALSE;';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -257,19 +254,20 @@ return FALSE;';
   $handler->display->display_options['fields']['body']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = 0;
   $handler->display->display_options['fields']['body']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
   $handler->display->display_options['fields']['body']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['body']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['trim'] = 1;
   $handler->display->display_options['fields']['body']['alter']['html'] = 0;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['body']['hide_empty'] = 0;
   $handler->display->display_options['fields']['body']['empty_zero'] = 0;
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
+    'trim_length' => '400',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
   /* Field: Content: Image */
@@ -310,7 +308,6 @@ return FALSE;';
   $handler->display->display_options['menu']['title'] = 'News';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
-
   /* Display: News By Year */
   $handler = $view->new_display('block', 'News By Year', 'news_by_year');
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -346,7 +343,7 @@ return FALSE;';
   $handler->display->display_options['arguments']['field_news_date_value_1']['summary_options']['count'] = FALSE;
   $handler->display->display_options['arguments']['field_news_date_value_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_news_date_value_1']['granularity'] = 'year';
-
+  
   /* Display: Recent News */
   $handler = $view->new_display('block', 'Recent News', 'recent_news');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -439,6 +436,5 @@ return FALSE;';
   $handler->display->display_options['fields']['field_news_image']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $export['news'] = $view;
-
   return $export;
 }
