@@ -167,10 +167,10 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['arguments']['field_news_date_value']['specify_validation'] = 1;
   $handler->display->display_options['arguments']['field_news_date_value']['validate']['type'] = 'php';
   $handler->display->display_options['arguments']['field_news_date_value']['validate_options']['code'] = '$handler->argument = $handler->view->args[0] . \'-\' . $argument;
-if ($argument > 0 && $argument < 13) {
-  return TRUE;
-}
-return FALSE;';
+  if ($argument > 0 && $argument < 13) {
+    return TRUE;
+  }
+  return FALSE;';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -257,19 +257,20 @@ return FALSE;';
   $handler->display->display_options['fields']['body']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = 0;
   $handler->display->display_options['fields']['body']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '300';
   $handler->display->display_options['fields']['body']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['body']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['trim'] = 1;
   $handler->display->display_options['fields']['body']['alter']['html'] = 0;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['body']['hide_empty'] = 0;
   $handler->display->display_options['fields']['body']['empty_zero'] = 0;
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
+    'trim_length' => '400',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
   /* Field: Content: Image */
