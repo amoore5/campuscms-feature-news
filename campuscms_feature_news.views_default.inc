@@ -9,7 +9,6 @@
  */
 function campuscms_feature_news_views_default_views() {
   $export = array();
-
   $view = new view;
   $view->name = 'news';
   $view->description = '';
@@ -19,7 +18,6 @@ function campuscms_feature_news_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'News';
@@ -185,7 +183,6 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -311,7 +308,6 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['menu']['title'] = 'News';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
-
   /* Display: News By Year */
   $handler = $view->new_display('block', 'News By Year', 'news_by_year');
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -347,7 +343,7 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['arguments']['field_news_date_value_1']['summary_options']['count'] = FALSE;
   $handler->display->display_options['arguments']['field_news_date_value_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_news_date_value_1']['granularity'] = 'year';
-
+  
   /* Display: Recent News */
   $handler = $view->new_display('block', 'Recent News', 'recent_news');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -440,6 +436,5 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_image']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $export['news'] = $view;
-
   return $export;
 }
