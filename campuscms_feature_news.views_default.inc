@@ -68,7 +68,7 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_date']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_news_date']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_news_date']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_news_date']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_news_date']['type'] = 'date_default';
   $handler->display->display_options['fields']['field_news_date']['settings'] = array(
     'format_type' => 'short',
     'fromto' => 'both',
@@ -232,7 +232,7 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_date']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_news_date']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_news_date']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_news_date']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_news_date']['type'] = 'date_default';
   $handler->display->display_options['fields']['field_news_date']['settings'] = array(
     'format_type' => 'short',
     'fromto' => 'both',
@@ -343,7 +343,7 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['arguments']['field_news_date_value_1']['summary_options']['count'] = FALSE;
   $handler->display->display_options['arguments']['field_news_date_value_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_news_date_value_1']['granularity'] = 'year';
-  
+
   /* Display: Recent News */
   $handler = $view->new_display('block', 'Recent News', 'recent_news');
   $handler->display->display_options['defaults']['title'] = FALSE;
