@@ -368,7 +368,7 @@ function campuscms_feature_news_field_default_fields() {
       'bundle' => 'news',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'You can add links to related information at the bottom of your news article by entering the link text and URL below. To add multiple links, click "Add Another Item." You can specify the order of your links using the "Weight" dropdown box next to each link.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -413,72 +413,6 @@ function campuscms_feature_news_field_default_fields() {
         'settings' => array(),
         'type' => 'link_field',
         'weight' => '6',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-news-field_news_sub_head'
-  $fields['node-news-field_news_sub_head'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_news_sub_head',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'news',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'something subheady',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '1',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_news_sub_head',
-      'label' => 'Sub Head',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'rows' => '5',
-        ),
-        'type' => 'text_textarea',
-        'weight' => '2',
       ),
     ),
   );
