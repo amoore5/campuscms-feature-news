@@ -199,7 +199,7 @@ function campuscms_feature_news_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'news',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'To specify where linked documents should display in your content, place your cursor in the "Body" field in the exact location you want the link then click "Insert." To remove the link, highlight the link text in the "Body" field, then press "Delete." Clicking "Remove" next to an uploaded document removes it from your site, but does not remove the link in your content.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -281,7 +281,7 @@ function campuscms_feature_news_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'news',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'To specify where uploaded images should display in your content, place your cursor in the "Body" field in the exact location you want the image then click "Insert." To change the alignment of an image, right click on the image and "Image Properties," click the "Advanced" tab and enter "image-right" or "image-center." To remove an image, click on the image in the "Body" field, then press "Delete." Clicking "Remove" next to an uploaded image removes it from your site, not the page itself.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
