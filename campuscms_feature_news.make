@@ -10,4 +10,4 @@ projects[link] = 1.0
 projects[nodeformcols] = 1.x-dev
 projects[pathauto] = 1.0
 projects[submit_field] = 1.3
-projects[views]  = 3.0
+projects[views]  = 3.1
