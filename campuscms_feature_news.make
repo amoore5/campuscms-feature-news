@@ -4,7 +4,13 @@ api = 2
 
 ; Contrib modules
 projects[date][type] = module
-projects[date] = 2.0-rc1
+
+; 2.x Last commit January 18th, 2012
+projects[date][type] = module
+projects[date][download][type] = git
+projects[date][download][url] = http://git.drupal.org/project/date.git
+projects[date][download][revision] = 686a4658b80e4c8f9ea7c38f364308cd8d66d4f1
+
 projects[insert] = 1.1
 projects[link] = 1.0
 
