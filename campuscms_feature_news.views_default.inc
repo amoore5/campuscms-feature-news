@@ -145,30 +145,14 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: Content: Date (field_news_date) */
-  $handler->display->display_options['arguments']['field_news_date_value_1']['id'] = 'field_news_date_value_1';
-  $handler->display->display_options['arguments']['field_news_date_value_1']['table'] = 'field_data_field_news_date';
-  $handler->display->display_options['arguments']['field_news_date_value_1']['field'] = 'field_news_date_value';
-  $handler->display->display_options['arguments']['field_news_date_value_1']['default_argument_skip_url'] = 0;
-  $handler->display->display_options['arguments']['field_news_date_value_1']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_news_date_value_1']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_news_date_value_1']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_news_date_value_1']['granularity'] = 'year';
-  /* Contextual filter: Content: Date (field_news_date) */
-  $handler->display->display_options['arguments']['field_news_date_value']['id'] = 'field_news_date_value';
+  $handler->display->display_options['arguments']['field_news_date_value']['id'] = 'field_news_date_value_1';
   $handler->display->display_options['arguments']['field_news_date_value']['table'] = 'field_data_field_news_date';
   $handler->display->display_options['arguments']['field_news_date_value']['field'] = 'field_news_date_value';
-  $handler->display->display_options['arguments']['field_news_date_value']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['field_news_date_value']['default_argument_skip_url'] = 0;
   $handler->display->display_options['arguments']['field_news_date_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_news_date_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_news_date_value']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_news_date_value']['specify_validation'] = 1;
-  $handler->display->display_options['arguments']['field_news_date_value']['validate']['type'] = 'php';
-  $handler->display->display_options['arguments']['field_news_date_value']['validate_options']['code'] = '$handler->argument = $handler->view->args[0] . \'-\' . $argument;
-  if ($argument > 0 && $argument < 13) {
-    return TRUE;
-  }
-  return FALSE;';
+  $handler->display->display_options['arguments']['field_news_date_value']['granularity'] = 'year';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
