@@ -5,6 +5,7 @@
 function campuscms_feature_news_install() {
   // Add custom breadcrumb.
   $breadcrumb = new stdClass();
+  $breadcrumb->name = 'campuscms_feature_news-node-news';
   $breadcrumb->paths = array('news','[node:field-news-date:custom:Y]');
   $breadcrumb->titles = array('News', '[node:field-news-date:custom:Y]');
   $breadcrumb->visibility_php = '';
@@ -17,5 +18,5 @@ function campuscms_feature_news_install() {
  * Implements hook_uninstall().
  */
 function campuscms_feature_news_uninstall() {
-
+  db_delete('custom_breadcrumb')->condition('name', 'campuscms_feature_news-node-news')->execute();
 }
