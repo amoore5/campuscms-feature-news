@@ -7,9 +7,8 @@ function campuscms_feature_news_install() {
   $breadcrumb = new stdClass();
   $breadcrumb->paths = array('news','[node:field-news-date:custom:Y]');
   $breadcrumb->titles = array('News', '[node:field-news-date:custom:Y]');
-  $breadcrumb->php_visibility = '';
+  $breadcrumb->visibility_php = '';
   $breadcrumb->node_type = 'news';
-  $breadcrumb->php_visibility = '';
 
   _custom_breadcrumbs_save_breadcrumb('custom_breadcrumbs', 'node', $breadcrumb);
 }
