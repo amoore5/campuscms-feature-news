@@ -5,3 +5,59 @@
  */
 
 include_once('campuscms_feature_news.features.inc');
+
+/**
+ * Implements hook_modules_installed().
+ */
+function campuscms_feature_news_modules_installed($modules) {
+  if (in_array('custom_breadcrumbs', $modules)) {
+    _campuscms_feature_news_custom_breadcrumbs();
+  }
+
+  if (in_array('custom_breadcrumbs_paths', $modules)) {
+    _campuscms_feature_news_custom_breadcrumbs_paths();
+  }
+
+  if (in_array('custom_breadcrumbs_views', $modules)) {
+    _campuscms_feature_news_custom_breadcrumbs_views();
+  }
+}
+
+// Create some breadcrumbs for the node
+function _campuscms_feature_news_custom_breadcrumbs() {
+  // Add node breadcrumb.
+  $breadcrumb = new stdClass();
+  $breadcrumb->name = 'campuscms_feature_news-node-news';
+  $breadcrumb->titles = array('News', '[node:field-news-date:custom:Y]', '[node:title]');
+  $breadcrumb->paths = array('news','[node:field-news-date:custom:Y]', '<none>');
+  $breadcrumb->visibility_php = '';
+  $breadcrumb->node_type = 'news';
+
+  _custom_breadcrumbs_save_breadcrumb('custom_breadcrumbs', 'node', $breadcrumb);
+}
+
+// Create some breadcrumbs for /news
+function _campuscms_feature_news_custom_breadcrumbs_paths() {
+  // Add the breadcrumb for the news page.
+  $breadcrumb = new stdClass();
+  $breadcrumb->name = 'campuscms_feature_news-paths-news';
+  $breadcrumb->titles = array('News');
+  $breadcrumb->paths = array('<none>');
+  $breadcrumb->visibility_php = '';
+  $breadcrumb->specific_path = 'news';
+
+  _custom_breadcrumbs_save_breadcrumb('custom_breadcrumbs_paths', 'paths', $breadcrumb);
+}
+
+// Create some breacrumbs for the /news/[year]
+function _campuscms_feature_news_custom_breadcrumbs_views() {
+  // Add the breadcrumb for the news/[year] page
+  $breadcrumb = new stdClass();
+  $breadcrumb->name = 'campuscms_feature_news-views-news';
+  $breadcrumb->titles = array('News', '[current-page:url:args:value:1]');
+  $breadcrumb->paths = array('news', '<none>');
+  $breadcrumb->visibility_php = '';
+  $breadcrumb->views_path = 'news';
+
+  _custom_breadcrumbs_save_breadcrumb('custom_breadcrumbs_views', 'views', $breadcrumb);
+}

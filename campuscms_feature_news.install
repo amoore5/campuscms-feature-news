@@ -3,35 +3,17 @@
  * Implements hook_install().
  */
 function campuscms_feature_news_install() {
-  // Add node breadcrumb.
-  $breadcrumb = new stdClass();
-  $breadcrumb->name = 'campuscms_feature_news-node-news';
-  $breadcrumb->titles = array('News', '[node:field-news-date:custom:Y]', '[node:title]');
-  $breadcrumb->paths = array('news','[node:field-news-date:custom:Y]', '<none>');
-  $breadcrumb->visibility_php = '';
-  $breadcrumb->node_type = 'news';
+  if (module_exists('custom_breadcrumbs')) {
+    _campuscms_feature_news_custom_breadcrumbs();
 
-  _custom_breadcrumbs_save_breadcrumb('custom_breadcrumbs', 'node', $breadcrumb);
+    if (module_exists('custom_breadcrumbs_paths')) {
+      _campuscms_feature_news_custom_breadcrumbs_paths();
+    }
 
-  // Add the breadcrumb for the news page.
-  $breadcrumb = new stdClass();
-  $breadcrumb->name = 'campuscms_feature_news-paths-news';
-  $breadcrumb->titles = array('News');
-  $breadcrumb->paths = array('<none>');
-  $breadcrumb->visibility_php = '';
-  $breadcrumb->specific_path = 'news';
-
-  _custom_breadcrumbs_save_breadcrumb('custom_breadcrumbs_paths', 'paths', $breadcrumb);
-
-  // Add the breadcrumb for the news/[year] page
-  $breadcrumb = new stdClass();
-  $breadcrumb->name = 'campuscms_feature_news-views-news';
-  $breadcrumb->titles = array('News', '[current-page:url:args:value:1]');
-  $breadcrumb->paths = array('news', '<none>');
-  $breadcrumb->visibility_php = '';
-  $breadcrumb->views_path = 'news';
-
-  _custom_breadcrumbs_save_breadcrumb('custom_breadcrumbs_views', 'views', $breadcrumb);
+    if (module_exists('custom_breadcrumbs_views')) {
+      _campuscms_feature_news_custom_breadcrumbs_views();
+    }
+  }
 }
 
 /**
