@@ -20,6 +20,5 @@ projects[nodeformcols][download][type] = git
 projects[nodeformcols][download][url] = http://git.drupal.org/project/nodeformcols.git
 projects[nodeformcols][download][revision] = 0120682a82fa03d7387cc215ab0cce6d3ae96a45
 
-projects[pathauto] = 1.0
 projects[submit_field] = 1.3
 projects[views]  = 3.1
