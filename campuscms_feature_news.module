@@ -29,7 +29,7 @@ function _campuscms_feature_news_custom_breadcrumbs() {
   $breadcrumb = new stdClass();
   $breadcrumb->name = 'campuscms_feature_news-node-news';
   $breadcrumb->titles = array('News', '[node:field-news-date:custom:Y]', '[node:title]');
-  $breadcrumb->paths = array('news','[node:field-news-date:custom:Y]', '<none>');
+  $breadcrumb->paths = array('news','news/[node:field-news-date:custom:Y]', '<none>');
   $breadcrumb->visibility_php = '';
   $breadcrumb->node_type = 'news';
 
