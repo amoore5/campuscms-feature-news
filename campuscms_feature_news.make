@@ -3,7 +3,7 @@ core = 7.x
 api = 2
 
 ; Contrib modules
-projects[date] = 2.5
+projects[date] = 2.6
 
 projects[insert] = 1.1
 
