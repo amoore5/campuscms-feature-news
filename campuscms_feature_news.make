@@ -17,4 +17,4 @@ projects[nodeformcols][download][revision] = 0120682a82fa03d7387cc215ab0cce6d3ae
 
 projects[submit_field] = 1.3
 
-projects[views]  = 3.3
+projects[views]  = 3.4
