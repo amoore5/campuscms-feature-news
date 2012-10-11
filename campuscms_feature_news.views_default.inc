@@ -218,7 +218,7 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_date']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_news_date']['type'] = 'date_default';
   $handler->display->display_options['fields']['field_news_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'medium',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -376,7 +376,7 @@ function campuscms_feature_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_date']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_news_date']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_news_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'medium',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
