@@ -5,7 +5,7 @@ api = 2
 ; Contrib modules
 projects[date] = 2.6
 
-projects[insert] = 1.1
+projects[insert] = 1.2
 
 projects[link] = 1.0
 
@@ -17,4 +17,4 @@ projects[nodeformcols][download][revision] = 0120682a82fa03d7387cc215ab0cce6d3ae
 
 projects[submit_field] = 1.3
 
-projects[views]  = 3.4
+projects[views]  = 3.5
